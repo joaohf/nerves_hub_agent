@@ -1,9 +1,5 @@
 import Config
 
-# Device HTTP connection.
-config :nerves_hub_link,
-  host: "0.0.0.0:4001"
-
 config :nerves_runtime,
    target: "host",
    kernel: [autoload_modules: false],
@@ -17,6 +13,14 @@ config :vintage_net,
 config :nerves_hub_link,
   host: "devices.nervescloud.com",
   configurator: NervesHubLink.Configurator.SharedSecret
+
+config :nerves_hub_link,
+  health: [
+    metric_sets: [
+      :defaults
+    ]
+  ],
+  remote_iex: true
 
 config :nerves_hub_link,
   shared_secret: [

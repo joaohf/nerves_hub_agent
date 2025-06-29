@@ -14,15 +14,16 @@ defmodule NervesHubAgent.MixProject do
       start_permanent: Mix.env() == :prod,
       deps: deps(),
       releases: [
-        nerves_hub_link: [
+        nerves_hub_agent: [
           applications: [
-            nerves_hub_link: :permanent
+            nerves_hub_agent: :permanent
           ],
           steps: [
             :assemble,
             :tar
           ],
-          include_erts: System.get_env("MIX_TARGET_INCLUDE_ERTS")
+          # When cross-compile, include the correct ERTS path
+          include_erts: System.get_env("MIX_TARGET_INCLUDE_ERTS") || true
         ]
       ]
     ]
