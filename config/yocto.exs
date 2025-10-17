@@ -12,18 +12,9 @@ config :vintage_net,
 
 config :nerves_hub_link,
   host: "devices.nervescloud.com",
-  configurator: NervesHubLink.Configurator.SharedSecret
-
-config :nerves_hub_link,
-  health: [
-    metric_sets: [
-      :defaults
-    ]
-  ],
-  remote_iex: true
-
-config :nerves_hub_link,
+  configurator: NervesHubLink.Configurator.SharedSecret,
   shared_secret: [
     product_key: "my key",
     product_secret: "my secret"
-  ]
+  ],
+  remote_iex: true
