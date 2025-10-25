@@ -41,7 +41,7 @@ defmodule NervesHubAgent.MixProject do
   defp deps do
     [
       {:nerves_runtime, "~> 0.13"},
-      {:nerves_hub_link, "~> 2.7"}
+      {:nerves_hub_link, "~> 2.9"}
     ]
   end
 end
